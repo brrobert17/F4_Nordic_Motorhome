@@ -20,5 +20,11 @@ public class CustomerDAO {
         RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
         return jdbcTemplate.query(sql, rowMapper);
     }
+    //look for customer id in database
+    public Customer getCustomer(int id) {
+        String sql = "SELECT * FROM nordic_motorhome.customers WHERE id = ?";
+        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
+        return jdbcTemplate.queryForObject(sql, rowMapper, id);
+    }
 
 }

@@ -42,5 +42,12 @@ public class Controller {
         model.addAttribute("bookingsList", bookingDAO.getBookings());
         return "bookingsPage";
     }
+    @GetMapping("/templates/makeABooking.html")
+    public String makeABooking(Model model) {
+        model.addAttribute("registrationPlate", vehicleDAO.getVehiclePlate(
+                vehicleDAO.getVehicles().get(0).getRegistrationPlate()));
+
+        return "makeABooking";
+    }
 
 }
