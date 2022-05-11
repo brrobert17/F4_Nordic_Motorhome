@@ -44,8 +44,7 @@ public class Controller {
     }
     @GetMapping("/templates/makeABooking.html")
     public String makeABooking(Model model) {
-        model.addAttribute("registrationPlate", vehicleDAO.getVehiclePlate(
-                vehicleDAO.getVehicles().get(0).getRegistrationPlate()));
+        model.addAttribute("vehicle", vehicleDAO.getVehiclePlate("do 788 45"));
 
         return "makeABooking";
     }

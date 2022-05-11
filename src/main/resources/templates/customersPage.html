@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <title>F4_Nordic_Motorhome</title>
 
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -24,7 +24,7 @@
     </thead>
     <tbody>
 
-    <tr th:each="customer : ${customersList}">
+    <tr th:each="customer : ${customersList}" id="demo" onclick="myFunction()">
         <td th:text="${customer.getCustomerId()}"></td>
         <td th:text="${customer.getFirstName()}"></td>
         <td th:text="${customer.getLastName()}"></td>
@@ -34,12 +34,15 @@
         <td th:text="${customer.getPhoneNumber()}"></td>
     </tr>
     </tbody>
-
-
-
-
 </table>
 
 </body>
+<footer>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").style.color = "red";
+        }
+    </script>
+</footer>
 
 </html>
